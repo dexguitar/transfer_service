@@ -1,0 +1,60 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output files
+*.out
+
+# Go build and test outputs
+/build/
+/bin/
+/dist/
+/vendor/
+/coverage.out
+
+# Go specific
+*.log
+*.test
+*.tmp
+*.cache
+*.prof
+.DS_Store
+*.coverprofile
+
+# Dependency directories
+/go/pkg
+/go/bin
+
+# Go modules
+go.work
+go.work.sum
+
+# Test result files
+*.testresult
+
+# Visual Studio Code
+.vscode/
+/.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/extensions.json
+.history/
+.vscodeworkspace
+
+# IDE specific files
+.idea/
+*.iml
+.project
+*.sublime-*
+*.workspace
+
+# System files
+Thumbs.db
+.DS_Store
+*.swp
+*~
+
+# Ignore Git merge conflict files
+*.orig
