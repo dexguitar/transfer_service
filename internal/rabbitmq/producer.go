@@ -9,6 +9,7 @@ import (
 
 type Producer interface {
 	PublishTransactionID(id int) error
+	PublishRaw(payload []byte) error
 }
 
 type producer struct {
@@ -29,6 +30,19 @@ func (p *producer) PublishTransactionID(id int) error {
 		false,
 		false,
 		amqpMessage(body),
+	)
+}
+
+func (p *producer) PublishRaw(payload []byte) error {
+	return p.r.channel.Publish(
+		"",
+		p.r.queue.Name,
+		false,
+		false,
+		amqp.Publishing{
+			ContentType: "application/json",
+			Body:        payload,
+		},
 	)
 }
 
